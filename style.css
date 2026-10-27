@@ -1,0 +1,17 @@
+/*Style all level-one headings*/
+h1 {
+color: #1B3F8B;
+font-size: 36px;
+font-weight: bold;
+ text-align: center;
+}
+p{
+colour: #258b54;
+background: #1B3F8B;
+}
+body{
+ front-family: Arial, sans-serif;
+ front-size:16px;
+ line- height: 1.6;
+ padding: 45px;
+}
