@@ -1,17 +1,38 @@
 /*Style all level-one headings*/
 h1 {
-color: #1B3F8B;
+color: #1c0902;
 font-size: 36px;
 font-weight: bold;
- text-align: center;
+text-align: center;
+padding-right: 30px;
+padding-left: 30px;
+padding-top: 30px;
+padding-bottom: 30px;
 }
 p{
-colour: #258b54;
-background: #1B3F8B;
+colour: #f9f7fa;
+background: #022604;
+padding-right: 30px;
+padding-left: 30px;
+padding-top: 30px;
+padding-bottom: 30px;
 }
 body{
- front-family: Arial, sans-serif;
- front-size:16px;
+ font-family: Comic Sans MS, cursive, sans-serif;
+ font-size:16px;
+color: #f9f7fa;
  line- height: 1.6;
- padding: 45px;
+ padding-right: 30px;
+ padding-left: 30px;
+ padding-top: 30px;
+ padding-bottom: 30px;
+ background: #bb83c7;
+}
+button{
+color: white;
+background: #022604;
+}
+footer{
+color: #e66e74;
+
 }
