@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCU SKILLCONNECT</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+p{
+colour: white;
+background: #2C2C2C;
+padding: 12px 15px;
+margin-bottom: 10px;
+}
+body{
+ font-family: Times New Roman, sans-serif;
+ font-size:16px;
+color: white;
+ line- height: 1.6;
+ padding: 10px 30px;
+ background: #e3e6c8;
+}
+button{
+color: white;
+background: #1A4D8F;
+}
+footer{
+color: white;
+background: #2C2C2C;
+padding: 8px 15px;
+margin-top: 15px;
+}
+h1 {
+  font-size: 40px;
+  color: #0a5dc2;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<div class="row justify-content-center align-items-center vh-100">
+<div class="col-md-4">
+<div class="card shadow">
+<div class="card-body">
+<h1>UCU SKILLCONNECT</h1>
+<div class="form-field">
+  <input class="radio" name="radios" type="radio" id="radioLabel" />
+  <label for="radioLabel"><em>Trainee</em></label>
+</div>
+<div class="form-field">
+  <input class="radio" name="radios" type="radio" id="radioLabel2" />
+  <label for="radioLabel2"><em>Trainer</em></label>
+</div>
+
+
+                    <form class="needs-validation" novalidate>
+
+<div class="mb-3">
+<label class="form-label">Email</label>
+<input type="email" class="form-control border-dark" placeholder="Enter email" required>
+<div class="invalid-feedback">
+Please enter a valid email address.
+</div>
+</div>
+<div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" class="form-control border-dark" placeholder="Enter password" id="password" required
+pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$">
+ <div class="invalid-feedback">
+ Password must have:
+                                <ul>
+                                    <li>8+ characters</li>
+                                    <li>1 uppercase letter</li>
+                                    <li>1 lowercase letter</li>
+                                    <li>1 number</li>
+                                </ul>
+                            </div>
+                        </div>
+
+<div class="form-check">
+    <input type="checkbox" class="form-check-input border-dark">
+    <label class="form-check-label">Remember Me</label>
+</div>
+<button class="btn btn-primary w-100">
+    Login
+</button>
+</form>
+<script>
+(() => {
+    'use strict';
+
+    const forms = document.querySelectorAll('.needs-validation');
+
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+
+        }, false);
+    });
+})();
+</script>
+<div class="btn-primary">
+<div class="btn-success">
+<div class="btn-danger">
+<div class="btn-dark">
+<div class="text-center mt-3">
+    <a href="chil.html">Forgot Password?</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<br>
+&copy; 2026 <strong><em>UCU SKILLCONNECT. All rights reserved.</em></strong><br>Contact us on:giozmusa@gmail.com
+</footer>
+</body>
+</html>
