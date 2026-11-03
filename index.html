@@ -29,7 +29,7 @@
   <a href="loginPage.html" class="btn btn-outline-primary px-4 py-2">Login</a>
    <a href="registerpage.html" class="btn btn-outline-primary px-4 py-2">Register</a>
     <a href="SkillConnect_Named_Trainers.html" class="btn btn-outline-primary px-4 py-2">Become a Trainer</a>
-  <a href="#Contact Us" class="btn btn-outline-primary px-4 py-2">Contact Us</a>
+  <a href="#Contact Us" class="btn btn-outline-primary px-4 py-2">About Us</a>
 </div>
 
 
@@ -48,77 +48,211 @@
   <div class="container">
   <h2>Explore Trainers</h2>
   
-  <!-- ONE single row holding all your trainer columns -->
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    
+  
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
     <!-- Trainer 1 -->
     <div class="col">
-      <a href="profile-grace.html" class="text-decoration-none">
-        <div class="card h-100 shadow-sm border border-2 rounded-4 overflow-hidden text-dark">
-          <div class="text-center p-4">
-            <img src="070bb7cd3b62dd0f4baa1a289aae6008.jpg.jpeg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" class="mx-auto" alt="Trainer Profile">
+      <div data-bs-toggle="modal" data-bs-target="#bookingModal1" class="text-decoration-none h-100" style="cursor: pointer;">
+        <div class="card h-100 shadow-sm border border-2 rounded-4 overflow-hidden text-dark position-relative">
+          
+          <!-- Rating Badge -->
+          <div class="position-absolute top-0 end-0 m-3" style="z-index: 10;">
+            <span class="badge bg-warning text-dark d-inline-flex align-items-center shadow-sm px-2 py-1 fw-bold">
+              <span class="me-1" style="color: #b38600;">★</span> 4.8
+            </span>
           </div>
-          <div class="card-body">
-            <h5 class="card-title"> Jonathan Nsaawa</h5>
-            <p class="card-text text-muted">3rd Year Computer Science major specializing in data structures, OOP logic, and introductory code labs.</p>
+
+          <div class="text-center p-4">
+            <img src="070bb7cd3b62dd0f4baa1a289aae6008.jpg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" class="mx-auto" alt="Trainer Profile">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Jonathan Nsaawa</h5>
+            <h6>Faculty of Tech and Design</h6>
+            <p class="card-text text-muted">Student Developer providing practical crash courses in responsive web design and mobile application</p>
+            
+            <div class="trainer-skills mt-auto pt-3">
+              <span class="badge bg-primary me-1">Web dev</span>
+              <span class="badge bg-secondary me-1">UI design(Figma)</span>
+            </div>
+            
+            <div class="mt-3">
+              <a href="#" class="btn btn-outline-primary btn-sm w-100 rounded-pill">Book a 1 on 1 Session</a>
+            </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
     <!-- Trainer 2 -->
     <div class="col">
-      <a href="#" class="text-decoration-none">
-        <div class="card h-100 shadow-sm border border-2 rounded-4 overflow-hidden text-dark">
-          <div class="text-center p-4">
-            <img src="070bb7cd3b62dd0f4baa1a289aae6008.jpg.jpeg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" class="mx-auto" alt="Trainer Profile">
+      <div data-bs-toggle="modal" data-bs-target="#bookingModal2" class="text-decoration-none h-100" style="cursor: pointer;">
+        <div class="card h-100 shadow-sm border border-2 rounded-4 overflow-hidden text-dark position-relative">
+          
+          <!-- Rating Badge -->
+          <div class="position-absolute top-0 end-0 m-3" style="z-index: 10;">
+            <span class="badge bg-warning text-dark d-inline-flex align-items-center shadow-sm px-2 py-1 fw-bold">
+              <span class="me-1" style="color: #b38600;">★</span> 4.9
+            </span>
           </div>
-          <div class="card-body">
+
+          <div class="text-center p-4">
+            <img src="070bb7cd3b62dd0f4baa1a289aae6008.jpg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" class="mx-auto" alt="Trainer Profile">
+          </div>
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Justin Kigozi</h5>
-            <p class="card-text text-muted">Student developer providing practical crash courses in responsive web design and mobile layouts.</p>
+            <h6>Faculty of Law</h6>
+            <p class="card-text text-muted">Final Year Student helping peers master complex legal research, moot court defense, and contract drafting.</p>
+            
+            <div class="trainer-skills mt-auto pt-3">
+              <span class="badge bg-primary me-1">Legal Research</span>
+              <span class="badge bg-secondary me-1">Moot Court</span>
+            </div>
+            
+            <div class="mt-3">
+              <a href="#" class="btn btn-outline-primary btn-sm w-100 rounded-pill">Book a 1 on 1 Session</a>
+            </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
     <!-- Trainer 3 -->
     <div class="col">
-      <a href="profile-grace.html" class="text-decoration-none">
-        <div class="card h-100 shadow-sm border border-2 rounded-4 overflow-hidden text-dark">
-          <div class="text-center p-4">
-            <img src="070bb7cd3b62dd0f4baa1a289aae6008.jpg.jpeg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" class="mx-auto" alt="Trainer Profile">
+      <div data-bs-toggle="modal" data-bs-target="#bookingModal3" class="text-decoration-none h-100" style="cursor: pointer;">
+        <div class="card h-100 shadow-sm border border-2 rounded-4 overflow-hidden text-dark position-relative">
+          
+          <!-- Rating Badge -->
+          <div class="position-absolute top-0 end-0 m-3" style="z-index: 10;">
+            <span class="badge bg-warning text-dark d-inline-flex align-items-center shadow-sm px-2 py-1 fw-bold">
+              <span class="me-1" style="color: #b38600;">★</span> 4.7
+            </span>
           </div>
-          <div class="card-body">
-            <h5 class="card-title">Juliet Laura Lakarebe </h5>
-            <p class="card-text text-muted">3rd Year Computer Science major specializing in data structures, OOP logic, and introductory code labs.</p>
+
+          <div class="text-center p-4">
+            <img src="070bb7cd3b62dd0f4baa1a289aae6008.jpg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" class="mx-auto" alt="Trainer Profile">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Juliet Laura Lakarebe</h5>
+            <h6>Bishop Tucker Divinity School</h6>  
+            <p class="card-text text-muted">Main Campus chapel pianist. Teaching beginner-to-advanced piano, sight reading and worship hymns</p>
+            
+            <div class="trainer-skills mt-auto pt-3">
+              <span class="badge bg-primary me-1">Music Theory</span>
+              <span class="badge bg-secondary me-1">Piano Lessons</span>
+            </div>
+            
+            <div class="mt-3">
+              <a href="#" class="btn btn-outline-primary btn-sm w-100 rounded-pill">Book a 1 on 1 Session</a>
+            </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
     <!-- Trainer 4 -->
     <div class="col">
-      <a href="#" class="text-decoration-none">
-        <div class="card h-100 shadow-sm border border-2 rounded-4 overflow-hidden text-dark">
-          <div class="text-center p-4">
-            <img src="070bb7cd3b62dd0f4baa1a289aae6008.jpg.jpeg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" class="mx-auto" alt="Trainer Profile">
+      <div data-bs-toggle="modal" data-bs-target="#bookingModal4" class="text-decoration-none h-100" style="cursor: pointer;">
+        <div class="card h-100 shadow-sm border border-2 rounded-4 overflow-hidden text-dark position-relative">
+          
+          <!-- Rating Badge -->
+          <div class="position-absolute top-0 end-0 m-3" style="z-index: 10;">
+            <span class="badge bg-warning text-dark d-inline-flex align-items-center shadow-sm px-2 py-1 fw-bold">
+              <span class="me-1" style="color: #b38600;">★</span> 5.0
+            </span>
           </div>
-          <div class="card-body">
-            <h5 class="card-title">Lucy Abalo</h5>
-            <p class="card-text text-muted">Student developer providing practical crash courses in responsive web design and mobile layouts.</p>
+
+          <div class="text-center p-4">
+            <img src="070bb7cd3b62dd0f4baa1a289aae6008.jpg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" class="mx-auto" alt="Trainer Profile">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Grace Mbabazi</h5>
+            <h6>Faculty of Tech and Design</h6>
+            <p class="card-text text-muted">3rd Year Data Science major specializing in AI algorithms, Machine Learning and Robotics</p>
+            
+            <div class="trainer-skills mt-auto pt-3">
+              <span class="badge bg-primary me-1">Python Programming</span>
+              <span class="badge bg-secondary me-1">Embedded Circuits</span>
+              <span class="badge bg-info text-dark">AI</span>
+            </div>
+            
+            <div class="mt-3">
+              <a href="#" class="btn btn-outline-primary btn-sm w-100 rounded-pill">Book a 1 on 1 Session</a>
+            </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
-  </div> 
-</div> 
+    <!-- Trainer 5 -->
+    <div class="col">
+      <div data-bs-toggle="modal" data-bs-target="#bookingModal5" class="text-decoration-none h-100" style="cursor: pointer;">
+        <div class="card h-100 shadow-sm border border-2 rounded-4 overflow-hidden text-dark position-relative">
+          
+          <!-- Rating Badge -->
+          <div class="position-absolute top-0 end-0 m-3" style="z-index: 10;">
+            <span class="badge bg-warning text-dark d-inline-flex align-items-center shadow-sm px-2 py-1 fw-bold">
+              <span class="me-1" style="color: #b38600;">★</span> 4.6
+            </span>
+          </div>
 
+          <div class="text-center p-4">
+            <img src="070bb7cd3b62dd0f4baa1a289aae6008.jpg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" class="mx-auto" alt="Trainer Profile">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Liam Basiime</h5>
+            <h6>Faculty of Engineering</h6>
+            <p class="card-text text-muted">Final Year Student helping peers master complex civil engineering, use of CAD tools, and 3D modelling.</p>
+            
+            <div class="trainer-skills mt-auto pt-3">
+              <span class="badge bg-primary me-1">CAD</span>
+              <span class="badge bg-secondary me-1">Technical Drawing</span>
+            </div>
+            
+            <div class="mt-3">
+              <a href="#" class="btn btn-outline-primary btn-sm w-100 rounded-pill">Book a 1 on 1 Session</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Trainer 6 -->
+    <div class="col">
+      <div data-bs-toggle="modal" data-bs-target="#bookingModal6" class="text-decoration-none h-100" style="cursor: pointer;">
+        <div class="card h-100 shadow-sm border border-2 rounded-4 overflow-hidden text-dark position-relative">
+          
+          <!-- Rating Badge -->
+          <div class="position-absolute top-0 end-0 m-3" style="z-index: 10;">
+            <span class="badge bg-warning text-dark d-inline-flex align-items-center shadow-sm px-2 py-1 fw-bold">
+              <span class="me-1" style="color: #b38600;">★</span> 4.9
+            </span>
+          </div>
 
+          <div class="text-center p-4">
+            <img src="070bb7cd3b62dd0f4baa1a289aae6008.jpg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" class="mx-auto" alt="Trainer Profile">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Dr.Timothy Mucunguzi</h5>
+            <h6>Faculty of Education and Arts</h6>  
+            <p class="card-text text-muted">Senior faculty advisor guiding postgraduates and final-year students through thesis methodolog</p>
+            
+            <div class="trainer-skills mt-auto pt-3">
+              <span class="badge bg-primary me-1">Study and Writing</span>
+              <span class="badge bg-secondary me-1">Essay Writing</span>
+              <span class="badge bg-info text-dark">Dissertation Proposal</span>
+            </div>
+            
+            <div class="mt-3">
+              <a href="#" class="btn btn-outline-primary btn-sm w-100 rounded-pill">Book a 1 on 1 Session</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
   
-
-
 <section id="How It Works" class="py-5">
 
 <div class="container py-5">
@@ -168,6 +302,7 @@
           <div class="card-body p-3">
             <h5 class="card-title fs-6 fw-bold">Session & Feedback Loop</h5>
             <p class="card-text text-muted small">Book 1-on-1 or group sessions, complete your milestone projects, and leave feedback to keep the community trusted</p>
+            
           </div>
         </div>
       </a>
@@ -180,8 +315,24 @@
 
 
 <section id="Contact Us" class="py-5">
-  <h2>Contact</h2>
-  <p>Content for your contact section goes here...</p>
+  <div class="container py-5">
+  <h2>About Us</h2>
+ <p><b> UCUSkillConnect</b> is a peer-to-peer learning platform designed for Uganda Christian University students. We bridge the gap between academic theory and practical mastery by connecting students with skilled peer trainers across various faculties for personalized 1-on-1 coaching, coding labs, music lessons, and academic support.
+</p>
+<p><b>Support & Contact</b>
+  <br>
+Location: Uganda Christian University, Main Campus, Mukono, Uganda
+<br>
+<p><b>Email Support:</b></p> support@ucuskillconnect.ac.ug
+<br>
+<p><b>Student Help Desk:</b></p> Available Monday to Friday, 8:00 AM – 5:00 EAT
+<br>
+Copyright
+© 2026 UCU SkillConnect. Built by students, for student success. All rights reserved.
+<br>
+</p>
+
+  </div>
 </section>
 
 
@@ -192,6 +343,213 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        
+    </script>
+ 
+    <!-- Booking Modal for triner 1 -->
+<div class="modal fade" id="bookingModal1" tabindex="-1" aria-labelledby="bookingModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow">
+      <div class="modal-header border-bottom-0 pb-0">
+        <h5 class="modal-title fw-bold" id="bookingModalLabel1">Book a 1-on-1 Session</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-4">
+        <p class="text-muted mb-4">You are booking a session with <strong>Jonathan Nsaawa</strong> (Faculty of Tech and Design).</p>
+        
+        <form>
+          <div class="mb-3">
+            <label for="studentName" class="form-label text-dark fw-semibold">Your Name</label>
+            <input type="text" class="form-control rounded-3" id="studentName" placeholder="Enter your full name">
+          </div>
+          <div class="mb-3">
+            <label for="sessionDate" class="form-label text-dark fw-semibold">Preferred Date</label>
+            <input type="date" class="form-control rounded-3" id="sessionDate">
+          </div>
+          <div class="mb-3">
+            <label for="sessionNotes" class="form-label text-dark fw-semibold">What would you like to focus on?</label>
+            <textarea class="form-control rounded-3" id="sessionNotes" rows="3" placeholder="Briefly describe what you need help with..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-top-0 pt-0 pb-4 px-4">
+        <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary rounded-pill px-4">Confirm Booking</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Modal for 2 -->
+<div class="modal fade" id="bookingModal2" tabindex="-1" aria-labelledby="bookingModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow">
+      <div class="modal-header border-bottom-0 pb-0">
+        <h5 class="modal-title fw-bold" id="bookingModalLabel1">Book a 1-on-1 Session</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-4">
+        <p class="text-muted mb-4">You are booking a session with <strong>Justin Kigozi</strong> (Faculty of Tech and Design).</p>
+        
+        <form>
+          <div class="mb-3">
+            <label for="studentName" class="form-label text-dark fw-semibold">Your Name</label>
+            <input type="text" class="form-control rounded-3" id="studentName" placeholder="Enter your full name">
+          </div>
+          <div class="mb-3">
+            <label for="sessionDate" class="form-label text-dark fw-semibold">Preferred Date</label>
+            <input type="date" class="form-control rounded-3" id="sessionDate">
+          </div>
+          <div class="mb-3">
+            <label for="sessionNotes" class="form-label text-dark fw-semibold">What would you like to focus on?</label>
+            <textarea class="form-control rounded-3" id="sessionNotes" rows="3" placeholder="Briefly describe what you need help with..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-top-0 pt-0 pb-4 px-4">
+        <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary rounded-pill px-4">Confirm Booking</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Modal foer 3 -->
+<div class="modal fade" id="bookingModal3" tabindex="-1" aria-labelledby="bookingModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow">
+      <div class="modal-header border-bottom-0 pb-0">
+        <h5 class="modal-title fw-bold" id="bookingModalLabel1">Book a 1-on-1 Session</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-4">
+        <p class="text-muted mb-4">You are booking a session with <strong>Juliet Laura Lakarebe</strong> (Faculty of Tech and Design).</p>
+        
+        <form>
+          <div class="mb-3">
+            <label for="studentName" class="form-label text-dark fw-semibold">Your Name</label>
+            <input type="text" class="form-control rounded-3" id="studentName" placeholder="Enter your full name">
+          </div>
+          <div class="mb-3">
+            <label for="sessionDate" class="form-label text-dark fw-semibold">Preferred Date</label>
+            <input type="date" class="form-control rounded-3" id="sessionDate">
+          </div>
+          <div class="mb-3">
+            <label for="sessionNotes" class="form-label text-dark fw-semibold">What would you like to focus on?</label>
+            <textarea class="form-control rounded-3" id="sessionNotes" rows="3" placeholder="Briefly describe what you need help with..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-top-0 pt-0 pb-4 px-4">
+        <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary rounded-pill px-4">Confirm Booking</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Modal for 4 -->
+<div class="modal fade" id="bookingModal4" tabindex="-1" aria-labelledby="bookingModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow">
+      <div class="modal-header border-bottom-0 pb-0">
+        <h5 class="modal-title fw-bold" id="bookingModalLabel1">Book a 1-on-1 Session</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-4">
+        <p class="text-muted mb-4">You are booking a session with <strong>Grace Mbabazi</strong> (Faculty of Tech and Design).</p>
+        
+        <form>
+          <div class="mb-3">
+            <label for="studentName" class="form-label text-dark fw-semibold">Your Name</label>
+            <input type="text" class="form-control rounded-3" id="studentName" placeholder="Enter your full name">
+          </div>
+          <div class="mb-3">
+            <label for="sessionDate" class="form-label text-dark fw-semibold">Preferred Date</label>
+            <input type="date" class="form-control rounded-3" id="sessionDate">
+          </div>
+          <div class="mb-3">
+            <label for="sessionNotes" class="form-label text-dark fw-semibold">What would you like to focus on?</label>
+            <textarea class="form-control rounded-3" id="sessionNotes" rows="3" placeholder="Briefly describe what you need help with..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-top-0 pt-0 pb-4 px-4">
+        <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary rounded-pill px-4">Confirm Booking</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Modal for 5 -->
+<div class="modal fade" id="bookingModal5" tabindex="-1" aria-labelledby="bookingModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow">
+      <div class="modal-header border-bottom-0 pb-0">
+        <h5 class="modal-title fw-bold" id="bookingModalLabel1">Book a 1-on-1 Session</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-4">
+        <p class="text-muted mb-4">You are booking a session with <strong>Liam Basiime</strong> (Faculty of Tech and Design).</p>
+        
+        <form>
+          <div class="mb-3">
+            <label for="studentName" class="form-label text-dark fw-semibold">Your Name</label>
+            <input type="text" class="form-control rounded-3" id="studentName" placeholder="Enter your full name">
+          </div>
+          <div class="mb-3">
+            <label for="sessionDate" class="form-label text-dark fw-semibold">Preferred Date</label>
+            <input type="date" class="form-control rounded-3" id="sessionDate">
+          </div>
+          <div class="mb-3">
+            <label for="sessionNotes" class="form-label text-dark fw-semibold">What would you like to focus on?</label>
+            <textarea class="form-control rounded-3" id="sessionNotes" rows="3" placeholder="Briefly describe what you need help with..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-top-0 pt-0 pb-4 px-4">
+        <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary rounded-pill px-4">Confirm Booking</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Modal for 6 -->
+<div class="modal fade" id="bookingModal1" tabindex="-1" aria-labelledby="bookingModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow">
+      <div class="modal-header border-bottom-0 pb-0">
+        <h5 class="modal-title fw-bold" id="bookingModalLabel1">Book a 1-on-1 Session</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-4">
+        <p class="text-muted mb-4">You are booking a session with <strong>Dr.Timothy Mucunguzi</strong> (Faculty of Tech and Design).</p>
+        
+        <form>
+          <div class="mb-3">
+            <label for="studentName" class="form-label text-dark fw-semibold">Your Name</label>
+            <input type="text" class="form-control rounded-3" id="studentName" placeholder="Enter your full name">
+          </div>
+          <div class="mb-3">
+            <label for="sessionDate" class="form-label text-dark fw-semibold">Preferred Date</label>
+            <input type="date" class="form-control rounded-3" id="sessionDate">
+          </div>
+          <div class="mb-3">
+            <label for="sessionNotes" class="form-label text-dark fw-semibold">What would you like to focus on?</label>
+            <textarea class="form-control rounded-3" id="sessionNotes" rows="3" placeholder="Briefly describe what you need help with..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-top-0 pt-0 pb-4 px-4">
+        <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary rounded-pill px-4">Confirm Booking</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   </body>
 </html>
