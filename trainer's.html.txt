@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillConnect | Share What You Know</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root { --brand:#2457d6; --ink:#172554; --soft:#eef3ff; }
+    body { background:#f7f9fd; color:#26324b; }
+    .navbar { box-shadow:0 3px 16px rgba(22,42,90,.12); }
+    .navbar-brand { letter-spacing:.2px; }
+    .hero {
+      background:linear-gradient(125deg,#eaf1ff 0%,#f7f9ff 55%,#e5edff 100%);
+      padding:78px 0 70px;
+    }
+    .hero h1 { color:var(--ink); font-weight:800; letter-spacing:-1px; }
+    .hero p { color:#596780; }
+    .hero-panel { background:white; border:1px solid #e5eaf5; border-radius:22px; padding:24px; box-shadow:0 15px 40px rgba(35,65,130,.08); }
+    section { scroll-margin-top:85px; }
+    .section-title { color:var(--ink); font-weight:750; }
+    .skill-card, .trainer-card { height:100%; border:1px solid #e7ebf3; border-radius:16px; transition:transform .18s ease,box-shadow .18s ease; }
+    .skill-card:hover, .trainer-card:hover { transform:translateY(-3px); box-shadow:0 12px 28px rgba(35,65,130,.09); }
+    .icon-box { width:42px;height:42px;border-radius:12px;background:var(--soft);display:grid;place-items:center;color:var(--brand);font-weight:800; }
+    .register-panel { border:0;border-radius:20px;overflow:hidden;box-shadow:0 14px 40px rgba(35,65,130,.10); }
+    .register-heading { background:linear-gradient(135deg,#2457d6,#4779ed);color:white;padding:25px; }
+    .form-control,.form-select { padding:.72rem .85rem;border-color:#dce3ef; }
+    .form-control:focus,.form-select:focus { border-color:#7c9cf1;box-shadow:0 0 0 .2rem rgba(36,87,214,.12); }
+    .btn-primary { background:var(--brand);border-color:var(--brand); }
+    .btn-primary:hover { background:#1946bb;border-color:#1946bb; }
+    .tag { background:#edf2ff;color:#2457d6;border-radius:30px;padding:5px 10px;font-size:.78rem;font-weight:600;display:inline-block;margin:3px 3px 0 0; }
+    footer { background:#172554; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background:#2457d6">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#home">SkillConnect</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <div class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#find">Find Skills</a>
+          <a class="nav-link" href="#trending">Trending</a>
+          <a class="nav-link" href="#offered">Skills Offered</a>
+          <button class="btn btn-warning fw-semibold ms-lg-2 mt-2 mt-lg-0" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">Register as Trainer</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="badge rounded-pill text-bg-primary-subtle text-primary mb-3 px-3 py-2">LEARN • SHARE • GROW</span>
+          <h1 class="display-4 mb-3">Discover a skill.<br>Share your knowledge.</h1>
+          <p class="lead mb-4">Connect with trainers, explore new skills and help others learn something valuable.</p>
+          <div class="hero-panel">
+            <label for="homeSearch" class="form-label fw-semibold">What would you like to learn?</label>
+            <div class="input-group">
+              <input id="homeSearch" class="form-control" placeholder="e.g. Python, graphic design..." aria-label="Search for a skill">
+              <button class="btn btn-primary px-4" type="button" onclick="goSearch()">Search</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="hero-panel">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="icon-box">SC</div>
+              <div><h5 class="mb-0 fw-bold">Your skills matter</h5><small class="text-muted">A community built on sharing</small></div>
+            </div>
+            <div class="p-3 rounded-3 mb-2" style="background:#f2f5ff"><strong>Learn something new</strong><p class="small text-muted mb-0">Explore skills from trainers in different fields.</p></div>
+            <div class="p-3 rounded-3" style="background:#f2fbf7"><strong>Teach what you know</strong><p class="small text-muted mb-0">Register and let learners discover your skills.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container py-5" id="find">
+      <div class="text-center mb-4">
+        <span class="text-primary fw-semibold small text-uppercase">Explore opportunities</span>
+        <h2 class="section-title mt-1">Find Skills</h2>
+        <p class="text-muted">Search for a skill and filter the results by category or level.</p>
+      </div>
+      <div class="row g-3 mb-4">
+        <div class="col-md-6"><input id="search" class="form-control" placeholder="Search skills..." oninput="showSkills()"></div>
+        <div class="col-md-3"><select id="category" class="form-select" onchange="showSkills()">
+          <option value="">All categories</option><option>Programming</option><option>Data</option><option>Design</option><option>Cybersecurity</option><option>Networking</option><option>Other</option>
+        </select></div>
+        <div class="col-md-3"><select id="level" class="form-select" onchange="showSkills()">
+          <option value="">All levels</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option>
+        </select></div>
+      </div>
+      <div class="row g-3" id="results"></div>
+      <p id="empty" class="text-center text-muted py-4 d-none">No matching skills found. Try another search.</p>
+    </section>
+
+    <section class="py-5" style="background:#eef3ff" id="trending">
+      <div class="container">
+        <div class="text-center mb-4">
+          <span class="text-primary fw-semibold small text-uppercase">Popular learning areas</span>
+          <h2 class="section-title mt-1">Trending Skills</h2>
+          <p class="text-muted">Explore some of the skills learners are interested in.</p>
+        </div>
+        <div class="accordion shadow-sm" id="trends">
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#trendPython">Python Programming</button></h2><div id="trendPython" class="accordion-collapse collapse show" data-bs-parent="#trends"><div class="accordion-body">Learn to write programs and solve problems using Python.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#trendData">Data Analysis</button></h2><div id="trendData" class="accordion-collapse collapse" data-bs-parent="#trends"><div class="accordion-body">Learn to organise, explore and understand data.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#trendWeb">Web Development</button></h2><div id="trendWeb" class="accordion-collapse collapse" data-bs-parent="#trends"><div class="accordion-body">Learn to create websites using web technologies.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#trendCyber">Cybersecurity and Networking</button></h2><div id="trendCyber" class="accordion-collapse collapse" data-bs-parent="#trends"><div class="accordion-body">Explore safe computing practices and computer networks.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#trendDesign">Graphic Design</button></h2><div id="trendDesign" class="accordion-collapse collapse" data-bs-parent="#trends"><div class="accordion-body">Learn how to communicate ideas through visual design.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#trendHtml">HTML &amp; CSS, JavaScript and Machine Learning</button></h2><div id="trendHtml" class="accordion-collapse collapse" data-bs-parent="#trends"><div class="accordion-body">Explore website structure, interactivity and intelligent data-driven systems.</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5" id="offered">
+      <div class="text-center mb-4">
+        <span class="text-primary fw-semibold small text-uppercase">Meet the community</span>
+        <h2 class="section-title mt-1">Skills Offered by Trainers</h2>
+        <p class="text-muted">Browse skills shared by registered trainers.</p>
+      </div>
+      <div class="row g-3" id="offers"></div>
+      <p id="noOffers" class="text-center text-muted d-none">No trainer skills have been added yet.</p>
+    </section>
+
+
+  </main>
+
+
+  <!-- Bootstrap registration modal: opens from the navbar button -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 overflow-hidden">
+        <div class="register-heading">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <span class="badge bg-light text-primary mb-2">JOIN SKILLCONNECT</span>
+              <h2 class="fw-bold mb-1" id="registerModalLabel">Register as a Trainer</h2>
+              <p class="mb-0 opacity-75">Create your trainer profile and share the skills you can teach.</p>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-body p-4 p-md-5">
+          <form id="registerForm">
+            <div class="mb-3">
+              <label for="trainerName" class="form-label fw-semibold">Full name</label>
+              <input id="trainerName" type="text" class="form-control" placeholder="Enter your full name" required>
+            </div>
+            <div class="mb-3">
+              <label for="trainerEmail" class="form-label fw-semibold">Email address</label>
+              <input id="trainerEmail" type="email" class="form-control" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="trainerPassword" class="form-label fw-semibold">Password</label>
+              <input id="trainerPassword" type="password" class="form-control" placeholder="Create a password" minlength="6" required>
+              <div class="form-text">For this front-end demonstration, the password is checked but not saved.</div>
+            </div>
+            <div class="mb-3">
+              <label for="trainerSkills" class="form-label fw-semibold">Skills you can teach</label>
+              <input id="trainerSkills" type="text" class="form-control" placeholder="e.g. Python, Data Analysis, Web Design" required>
+              <div class="form-text">If you teach more than one skill, separate them with commas.</div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-100">Complete Trainer Registration</button>
+          </form>
+          <div id="registerMessage" class="mt-3" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-white text-center py-4">
+    <div class="container"><strong>SkillConnect</strong><p class="small mb-0 mt-1 text-white-50">Discover, share and learn skills. © 2026 SkillConnect</p></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Sample skills displayed when the page first opens.
+    let skills = [
+      {name:"Python Programming", category:"Programming", level:"Beginner", trainer:"Juliet Laura"},
+      {name:"Data Analysis", category:"Data", level:"Intermediate", trainer:"Abalo Lucy"},
+      {name:"Web Development", category:"Programming", level:"Beginner", trainer:"Grace Mbabazi"},
+      {name:"Cybersecurity", category:"Cybersecurity", level:"Intermediate", trainer:"Mr. Timoty"},
+      {name:"Graphic Design", category:"Design", level:"Beginner", trainer:"Mr. Justin"},
+      {name:"HTML & CSS", category:"Programming", level:"Beginner", trainer:"Mr. Nsaawa"},
+      {name:"JavaScript", category:"Programming", level:"Intermediate", trainer:"Mr. Jonathan"},
+      {name:"Machine Learning", category:"Data", level:"Advanced", trainer:"Mr. Kigozi"}
+    ];
+
+    // Add trainer skills saved in this browser to the displayed skill list.
+    let registeredTrainers = [];
+    try {
+      registeredTrainers = JSON.parse(localStorage.getItem("skillConnectTrainers") || "[]");
+      if (!Array.isArray(registeredTrainers)) registeredTrainers = [];
+    } catch (error) {
+      registeredTrainers = [];
+    }
+    registeredTrainers.forEach(trainer => {
+      (trainer.skills || []).forEach(skillName => {
+        skills.push({name:skillName, category:guessCategory(skillName), level:"Beginner", trainer:trainer.name});
+      });
+    });
+
+    function guessCategory(skillName) {
+      const value = skillName.toLowerCase();
+      if (value.includes("data") || value.includes("machine learning")) return "Data";
+      if (value.includes("design")) return "Design";
+      if (value.includes("cyber")) return "Cybersecurity";
+      if (value.includes("network")) return "Networking";
+      if (["python","javascript","java","html","css","web","programming"].some(word => value.includes(word))) return "Programming";
+      return "Other";
+    }
+
+    function showSkills() {
+      const word = document.getElementById("search").value.trim().toLowerCase();
+      const cat = document.getElementById("category").value;
+      const lev = document.getElementById("level").value;
+      const found = skills.filter(skill =>
+        skill.name.toLowerCase().includes(word) &&
+        (!cat || skill.category === cat) &&
+        (!lev || skill.level === lev)
+      );
+
+      document.getElementById("results").innerHTML = found.map(skill => `
+        <div class="col-md-6 col-lg-4">
+          <div class="card skill-card"><div class="card-body p-4">
+            <div class="icon-box mb-3">✦</div>
+            <h5 class="fw-bold">${escapeHTML(skill.name)}</h5>
+            <p class="text-muted small mb-2">Trainer: ${escapeHTML(skill.trainer)}</p>
+            <span class="tag">${escapeHTML(skill.category)}</span>
+          </div></div>
+        </div>`).join("");
+
+      document.getElementById("empty").classList.toggle("d-none", found.length > 0);
+      renderOffers();
+    }
+
+    function renderOffers() {
+      document.getElementById("offers").innerHTML = skills.map(skill => `
+        <div class="col-md-6 col-lg-4">
+          <div class="card trainer-card"><div class="card-body p-4">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="icon-box">✓</div>
+              <div><h6 class="fw-bold mb-0">${escapeHTML(skill.name)}</h6><small class="text-muted">Trainer: ${escapeHTML(skill.trainer)}</small></div>
+            </div>
+            <span class="tag">${escapeHTML(skill.category)}</span>
+          </div></div>
+        </div>`).join("");
+      document.getElementById("noOffers").classList.toggle("d-none", skills.length > 0);
+    }
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, character => ({
+        "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+      })[character]);
+    }
+
+    function goSearch() {
+      document.getElementById("search").value = document.getElementById("homeSearch").value;
+      showSkills();
+      document.getElementById("find").scrollIntoView({behavior:"smooth"});
+    }
+
+    // Register the trainer and display their skills. The password is never stored.
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("trainerName").value.trim();
+      const email = document.getElementById("trainerEmail").value.trim().toLowerCase();
+      const password = document.getElementById("trainerPassword").value;
+      const skillNames = document.getElementById("trainerSkills").value
+        .split(",").map(item => item.trim()).filter(Boolean);
+      const message = document.getElementById("registerMessage");
+
+      if (password.length < 6) {
+        message.className = "mt-3 text-danger";
+        message.textContent = "Please use a password with at least 6 characters.";
+        return;
+      }
+      if (skillNames.length === 0) {
+        message.className = "mt-3 text-danger";
+        message.textContent = "Please enter at least one skill you can teach.";
+        return;
+      }
+      if (registeredTrainers.some(trainer => trainer.email === email)) {
+        message.className = "mt-3 text-danger";
+        message.textContent = "This email has already been registered on this browser.";
+        return;
+      }
+
+      const trainer = {name:name, email:email, skills:skillNames};
+      registeredTrainers.push(trainer);
+      try {
+        localStorage.setItem("skillConnectTrainers", JSON.stringify(registeredTrainers));
+      } catch (error) {
+        registeredTrainers.pop();
+        message.className = "mt-3 text-danger";
+        message.textContent = "Your browser could not save this registration. Please check your browser storage settings.";
+        return;
+      }
+
+      skillNames.forEach(skillName => {
+        skills.push({name:skillName, category:guessCategory(skillName), level:"Beginner", trainer:name});
+      });
+      showSkills();
+      this.reset();
+      message.className = "alert alert-success mt-3 mb-0";
+      message.textContent = "Registration successful! Your trainer skills have been added to Skills Offered.";
+      const registrationModal = bootstrap.Modal.getOrCreateInstance(document.getElementById("registerModal"));
+      registrationModal.hide();
+      document.getElementById("offered").scrollIntoView({behavior:"smooth"});
+    });
+
+    showSkills();
+  </script>
+</body>
+</html>
