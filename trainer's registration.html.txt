@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UCU SkillConnect | Registration</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f7f9fd;
+            color: #26324b;
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .brand {
+            color: #000080;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .register-section {
+            padding: 60px 15px;
+        }
+
+        .register-card {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .register-heading {
+            background: #2457d6;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .form-control {
+            padding: 12px;
+        }
+
+        .btn-primary {
+            background: #2457d6;
+            border: none;
+        }
+
+        footer {
+            background: #000080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+        <a class="navbar-brand brand" href="#">
+            UCU SkillConnect
+        </a>
+
+        <a href="#" class="btn btn-outline-primary">
+            Home
+        </a>
+
+    </div>
+</nav>
+
+<!-- Registration Section -->
+<section class="register-section">
+
+    <div class="register-card">
+
+        <div class="register-heading">
+            <h2>Trainer Registration</h2>
+            <p class="mb-0">
+                Share your knowledge and help others develop new skills.
+            </p>
+        </div>
+
+        <div class="p-4 p-md-5">
+
+            <form id="registerForm">
+
+                <div class="mb-3">
+                    <label for="trainerName" class="form-label">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="trainerName"
+                        class="form-control"
+                        placeholder="Enter your full name"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="trainerEmail" class="form-label">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="trainerEmail"
+                        class="form-control"
+                        placeholder="name@example.com"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="trainerPassword" class="form-label">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="trainerPassword"
+                        class="form-control"
+                        placeholder="Create a password"
+                        minlength="6"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="trainerSkills" class="form-label">
+                        Skills You Can Teach
+                    </label>
+
+                    <input
+                        type="text"
+                        id="trainerSkills"
+                        class="form-control"
+                        placeholder="e.g. Python, Web Design"
+                        required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 btn-lg">
+                    Complete Registration
+                </button>
+
+            </form>
+
+            <div id="registerMessage" class="mt-3"></div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+    <p class="mb-1">
+        &copy; 2026 <strong>UCU SkillConnect</strong>.
+        All rights reserved.
+    </p>
+
+    <p class="mb-0">
+        Contact: support@ucuskillconnect.ac.ug
+    </p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        let name = document.getElementById("trainerName").value;
+        let email = document.getElementById("trainerEmail").value;
+        let password = document.getElementById("trainerPassword").value;
+        let skills = document.getElementById("trainerSkills").value;
+
+        if (password.length < 6) {
+
+            document.getElementById("registerMessage").innerHTML =
+                '<div class="alert alert-danger">Password must have at least 6 characters.</div>';
+
+        } else {
+
+            document.getElementById("registerMessage").innerHTML =
+                '<div class="alert alert-success">Registration completed successfully! Welcome, ' + name + '.</div>';
+
+            document.getElementById("registerForm").reset();
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
